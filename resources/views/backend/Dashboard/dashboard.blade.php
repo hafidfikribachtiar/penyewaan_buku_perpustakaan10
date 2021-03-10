@@ -1,8 +1,7 @@
 @extends('layout.app')
 @section('content')
-    
-@endsection
 
+<div class="content-wrapper">
 <div class="row">
     <div class="col-12 col-sm-6 col-md-3">
       <div class="info-box">

@@ -1,11 +1,33 @@
 @extends('layout.app')
 @section('content')
 
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Books</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">books</a></li>
+            <li class="breadcrumb-item active">slide 1</li>
+          </ol>
+        </div><!-- /.col -->
+        <hr class="my-4">     
+          <a href="books/add" class="btn btn-primary">
+            Create Book</a>  
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
 <div class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Books</h3>
+          <h3 class="card-title">Books Data</h3>
 
           <div class="card-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -25,69 +47,77 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>User</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Reason</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>183</td>
-                <td>John Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-success">Approved</span></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                <td>1</td>
+                <td>Programming</td>
+                <td>Bahasa PHP</td>
+                <td><span class="tag tag-success" >50.000</span></td>
+                <td>
+                <a href="#" class="btn btn-success btn-sm"><i class="fas fa-cog"></i></a>
+                <a href="#" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                </td>
               </tr>
               <tr>
-                <td>219</td>
-                <td>Alexander Pierce</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-warning">Pending</span></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                <td>2</td>
+                <td>Sejarah</td>
+                <td></td>
+                <td><span class="tag tag-warning">50.000</span></td>
+                <td>
+                  <a href="#" class="btn btn-success btn-sm"><i class="fas fa-cog"></i></a>
+                  <a href="#" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                  <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                </td>
               </tr>
               <tr>
-                <td>657</td>
-                <td>Bob Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-primary">Approved</span></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                <td>3</td>
+                <td>Informatika</td>
+                <td>Memahami Dasar-dasar Bahasa Python</td>
+                <td><span class="tag tag-primary">50.000</span></td>
+                <td>
+                  <a href="#" class="btn btn-success btn-sm"><i class="fas fa-cog"></i></a>
+                  <a href="#" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                  <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                </td>
               </tr>
               <tr>
-                <td>175</td>
-                <td>Mike Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-danger">Denied</span></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                <td>4</td>
+                <td>Filsafat</td>
+                <td></td>
+                <td><span class="tag tag-danger">50.000</span></td>
+                <td>
+                  <a href="#" class="btn btn-success btn-sm"><i class="fas fa-cog"></i></a>
+                  <a href="#" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                  <a href="/edit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                </td>
               </tr>
               <tr>
-                <td>134</td>
-                <td>Jim Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-success">Approved</span></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                <td>5</td>
+                <td>Dunia Kedokteran</td>
+                <td></td>
+                <td><span class="tag tag-success">50.000</span></td>
+                <td>
+                  <a href="#" class="btn btn-success btn-sm"><i class="fas fa-cog"></i></a>
+                  <a href="#" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                  <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                </td>
               </tr>
               <tr>
-                <td>494</td>
-                <td>Victoria Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-warning">Pending</span></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-              </tr>
-              <tr>
-                <td>832</td>
-                <td>Michael Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-primary">Approved</span></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-              </tr>
-              <tr>
-                <td>982</td>
-                <td>Rocky Doe</td>
-                <td>11-7-2014</td>
-                <td><span class="tag tag-danger">Denied</span></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-              </tr>
+                <td>6</td>
+                <td>Bicara Psikologi</td>
+                <td></td>
+                <td><span class="tag tag-warning">50.000</span></td>
+                <td>
+                  <a href="#" class="btn btn-success btn-sm"><i class="fas fa-cog"></i></a>
+                  <a href="#" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                  <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                </td>
             </tbody>
           </table>
         </div>

@@ -16,9 +16,9 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $member = Member::all();
+        $member = DB::table('books')->get();
 
-        return view('member/index', compact('member'));
+        return view('members.index', compact('members'));
     }
 
     public function member(){

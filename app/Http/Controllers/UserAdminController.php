@@ -3,32 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserAdminController extends Controller
 {
     public function index()
     {
-        $user_admin = user_admin::all();
-
-        return view('user_admin/index', compact('user_admin'));
+        $useradmin = DB::table('useradmin')->get();
+        return view ('useradmin.index', compact('useradmin'));
     }
 
     //form tambah
-    public function postsave ($id)
-    {
-        //
+    public function postsave (Request $request){
+        DB::table('useradmin')->insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+        return redirect('/admin/useradmin');
     }
 
     //simpan form
-    public function edit ($id)
+    public function edit ()
     {
-        //
+        return view ('useradmin.edit');
     }
 
     //form edit
     public function delete ($id)
     {
-        //
+        DB::table('useradmin')->where('id', $id)->delete();
+        return redirect('/useradmin');
     }
 
     //hapus data
@@ -38,8 +43,8 @@ class UserAdminController extends Controller
     }
 
     //detail data
-    public function add ($id)
+    public function add ()
     {
-        //
+        return view ('useradmin/add');
     }
 }

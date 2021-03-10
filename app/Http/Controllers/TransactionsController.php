@@ -3,36 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TransactionsController extends Controller
 {
     public function index()
     {
-        $transactions = Transactions::all();
-
-        return view('transactions/index', compact('transactions'));
-    }
-
-    public function members(){
-        return view('transactions/create');
+        $transactions = DB::table('transactions')->get();
+        return view('transactions.index', compact('transactions'));
     }
 
     //form tambah
-    public function postsave ($id)
-    {
-        //
+    public function postsave (Request $request){
+        DB::table('transactions')->insert([
+            'trans_no' => $request->trans_no,
+            'grand_total' => $request->grand_total,
+            'created_by' => $request->created_by
+        ]);
+        return redirect('/admin/transactions');
     }
 
     //simpan form
-    public function edit ($id)
+    public function edit ()
     {
-        //
+        return view ('transactions.edit');
     }
 
     //form edit
     public function delete ($id)
     {
-        //
+        DB::table('transactions')->where('id', $id)->delete();
+        return redirect('/transactions');
     }
 
     //hapus data
@@ -42,8 +43,8 @@ class TransactionsController extends Controller
     }
 
     //detail data
-    public function add ($id)
+    public function add ()
     {
-        //
+        return view('transactions/add');
     }
 }

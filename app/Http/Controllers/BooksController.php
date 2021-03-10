@@ -17,33 +17,28 @@ class BooksController extends Controller
 
         return view('books.index', compact('books'));
     }
-
-    public function books(Request $request){
+        
+    //form tambah
+    public function postsave (Request $request){
         DB::table('books')->insert([
             'title' => $request->title,
             'description' => $request->description,
-            'price' => $request->price,
-            'books_categories' => $request->books_categories
+            'price' => $request->price
         ]);
         return redirect('/admin/books');
     }
 
-    //form tambah
-    public function postsave ($id)
-    {
-        //
-    }
-
     //simpan form
-    public function edit ($id)
+    public function edit()
     {
-        //
+        return view ('books.edit');
     }
 
     //form edit
     public function delete ($id)
     {
-        //
+        DB::table('books')->where('id', $id)->delete();
+        return redirect('/books');
     }
 
     //hapus data
@@ -53,8 +48,8 @@ class BooksController extends Controller
     }
 
     //detail data
-    public function add ($id)
+    public function add ()
     {
-        //
+        return view ('books.add');
     }
 }

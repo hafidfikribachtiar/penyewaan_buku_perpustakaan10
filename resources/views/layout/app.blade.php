@@ -23,7 +23,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
-                <a href="adashboard" class="nav-link">Dashboard</a>
+                <a href="{{url('admin/dashboard')}}" class="nav-link">Dashboard</a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link">Contact</a>
@@ -152,8 +152,8 @@
                        with font-awesome or any other icon font library -->
                         
 
-                       <li class="nav-item menu-open">
-                        <a href="#" class="nav-link active">
+                       <li class="nav-item">
+                        <a href="#" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
                           <p>
                             Home
@@ -184,14 +184,14 @@
                           </li>
 
                           <li class="nav-item">
-                            <a href="./bookscategories" class="nav-link">
+                            <a href="./books_categories" class="nav-link">
                               <i class="nav-icon fas fa-copy"></i>
                               <p>Books Categories</p>
                             </a>
                           </li>                       
                                     
                           <li href="#" class="nav-item">
-                              <a href="./transaction" class="nav-link">
+                              <a href="./transactions" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>Transaction</p>                                 
                               </a>
@@ -205,8 +205,8 @@
                           </li>
                       </ul>
 
-                        <li class="">
-                          <a href="{{route ('logout')}}" class="nav-link active">
+                        <li class="nav-item">
+                          <a href="{{route ('logout')}}" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                               Log Out 
@@ -221,24 +221,6 @@
           </aside>
 
             <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Home</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">slide 1</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
 @yield('content')
     <!-- Main content -->
           <div class="content-wrapper">  
